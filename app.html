@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+<style>
+body{font-family:Arial;margin:0}
+.header{background:#1976d2;color:white;padding:15px}
+.content{padding:20px}
+button{padding:10px}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  RotaExpert Dashboard
+</div>
+
+<div class="content">
+  <h3 id="user"></h3>
+  <button onclick="logout()">Sair</button>
+</div>
+
+</body>
+</html>
