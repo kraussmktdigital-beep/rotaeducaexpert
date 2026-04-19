@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
-// 🔥 SUA CONFIG REAL
 const firebaseConfig = {
   apiKey: "AIzaSyDPWszT1ekCHGhi_WG8RhzZe9LptBntomA",
   authDomain: "rotaexpertlite.firebaseapp.com",
@@ -12,19 +11,12 @@ const firebaseConfig = {
   measurementId: "G-NQ8ZFHZEEY"
 };
 
-// inicia Firebase
 const app = initializeApp(firebaseConfig);
 
-// auth
 export const auth = getAuth(app);
+
 const provider = new GoogleAuthProvider();
 
-// LOGIN GOOGLE
-export const loginWithGoogle = () => {
-  return signInWithPopup(auth, provider);
-};
+export const loginWithGoogle = () => signInWithPopup(auth, provider);
 
-// LOGOUT
-export const logout = () => {
-  return signOut(auth);
-};
+export const logout = () => signOut(auth);

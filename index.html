@@ -2,79 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rota-demo</title>
+    <title>Rota Expert</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-﻿<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Login</title>
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="firebase.js"></script>
-
-<style>
-body{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  font-family:Arial;
-  background:#0d47a1;
-  margin:0;
-}
-.box{
-  background:#fff;
-  padding:25px;
-  border-radius:10px;
-  width:260px;
-}
-input,button{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-}
-.login{background:#1976d2;color:white;border:none}
-.register{background:#43a047;color:white;border:none}
-</style>
-</head>
-
-<body>
-
-<div class="box">
-  <h2>Login</h2>
-
-  <input id="email" type="email" placeholder="Email">
-  <input id="senha" type="password" placeholder="Senha">
-
-  <button class="login" onclick="login()">Entrar</button>
-  <button class="register" onclick="register()">Criar conta</button>
-</div>
-
-<script>
-function login(){
-  auth.signInWithEmailAndPassword(email.value, senha.value)
-  .then(() => {
-    window.location.href = "app.html";
-  })
-  .catch(e => alert(e.message));
-}
-
-function register(){
-  auth.createUserWithEmailAndPassword(email.value, senha.value)
-  .then(() => alert("Conta criada"))
-  .catch(e => alert(e.message));
-}
-</script>
-
-</body>
-</html>
- e0337ba0a84eccf79f3ba8019f6bf25b3b6f8d1b
