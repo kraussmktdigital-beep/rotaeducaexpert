@@ -1,6 +1,16 @@
-import { loginWithGoogle, logout } from "./firebase";
+import { useState, useEffect } from "react";
+import { auth, loginWithGoogle, logout } from "./firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function App() {
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (u) => {
+      setUser(u);
+    });
+  }, []);
+
   return (
     <div style={{
       display: "flex",
@@ -11,23 +21,21 @@ export default function App() {
     }}>
       
       {/* SIDEBAR */}
-      <div style={{
-        width: 240,
-        background: "#111827",
-        padding: 20
-      }}>
+      <div style={{ width: 240, background: "#111827", padding: 20 }}>
         <h2 style={{ color: "#38bdf8" }}>Rota Expert</h2>
 
-        <button onClick={loginWithGoogle} style={btn}>
-          Login Google
-        </button>
-
-        <button onClick={logout} style={btn}>
-          Logout
-        </button>
+        {user ? (
+          <>
+            <p>👤 {user.email}</p>
+            <button onClick={logout} style={btn}>Logout</button>
+          </>
+        ) : (
+          <button onClick={loginWithGoogle} style={btn}>
+            Login Google
+          </button>
+        )}
 
         <hr />
-
         <p>📊 Dashboard</p>
         <p>👥 Leads</p>
         <p>💰 Vendas</p>
