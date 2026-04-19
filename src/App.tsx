@@ -12,7 +12,7 @@ export default function App() {
       
       {/* SIDEBAR */}
       <div style={{
-        width: 220,
+        width: 240,
         background: "#111827",
         padding: 20
       }}>
@@ -28,9 +28,9 @@ export default function App() {
 
         <hr />
 
-        <p>Dashboard</p>
-        <p>Leads</p>
-        <p>Vendas</p>
+        <p>📊 Dashboard</p>
+        <p>👥 Leads</p>
+        <p>💰 Vendas</p>
       </div>
 
       {/* MAIN */}
@@ -62,12 +62,12 @@ function Card({ title, value }: any) {
 }
 
 const btn = {
-  display: "block",
   marginTop: 10,
   padding: 10,
   background: "#1f2937",
   color: "white",
   border: "none",
   borderRadius: 6,
-  cursor: "pointer"
+  cursor: "pointer",
+  width: "100%"
 };
