@@ -88,3 +88,9 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 >>>>>>> e0337ba0a84eccf79f3ba8019f6bf25b3b6f8d1b
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
